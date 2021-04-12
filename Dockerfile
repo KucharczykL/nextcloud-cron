@@ -1,6 +1,7 @@
 FROM nextcloud:latest
 RUN apt-get update && apt-get install -y \
     supervisor \
+    imagemagick \
     && rm -rf /var/lib/apt/lists/* \
     && mkdir /var/log/supervisord /var/run/supervisord
 COPY supervisord.conf /
